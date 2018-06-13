@@ -33,6 +33,18 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.back_to_contacts_list()
 
+    def delete_first_contact(self):
+        wd = self.app.wd
+        self.select_first_contact(wd)
+        wd.find_element_by_name("selected[]").click()
+        # find button delete
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.back_to_contacts_list()
+
+    def select_first_contact(self, wd):
+        wd.find_element_by_name("selected[]").click()
+
     def back_to_contacts_list(self):
         wd = self.app.wd
         wd.find_element_by_link_text("home").click()
