@@ -22,6 +22,8 @@ class ContactHelper:
         wd.find_element_by_name("nickname").clear()
         wd.find_element_by_name("nickname").send_keys(contact.nick)
         wd.find_element_by_name("home").click()
+
+
         wd.find_element_by_name("home").clear()
         wd.find_element_by_name("home").send_keys(contact.home_phone)
         wd.find_element_by_name("mobile").click()
